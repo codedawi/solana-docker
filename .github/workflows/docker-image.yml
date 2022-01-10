@@ -7,12 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
+    env:
+      SOLANA_LATEST_VERSION: 1.8.11
     strategy:
       matrix:
         solana-version: ["1.6.22", "1.8.11"]
+        solana-network: ["devnet", "testnet"]
     steps:
       -
         name: Checkout
@@ -33,6 +35,7 @@ jobs:
           context: .
           file: Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ matrix.solana-version }}
           build-args: |
             SOLANA_VERSION=${{ matrix.solana-version }}
-            SOLANA_CLUSTER=devnet
+            SOLANA_CLUSTER=${{ matrix.solana-network }}
