@@ -7,7 +7,9 @@ Solana Docker Image for development of smart contracts and decentralized applica
 
 ## Tags
 
-- `1.6.22`, `1.6`, `latest` ([0.21/Dockerfile](https://github.com/codedawi/solana-docker/blob/main/Dockerfile))
+- `1.9.12`, `latest` 
+
+See: [`Dockerfile`](https://github.com/codedawi/solana-docker/blob/main/Dockerfile)
 
 **Multi-architecture builds**
 
